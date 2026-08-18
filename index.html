@@ -111,20 +111,21 @@
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-8">
+    <!-- Main Content wrapper - zero padding on mobile for edge-to-edge -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-0 md:px-4 py-8">
         
         <!-- About Section -->
-        <section id="about" class="mb-16 pt-8">
+        <section id="about" class="mb-16 pt-8 px-4 md:px-0">
             <h2 class="text-3xl font-bold text-center mb-8">About</h2>
-            <div class="flex flex-col md:flex-row gap-0 items-stretch border-4 border-black">
-                <!-- About Photo (Uses images folder path now) -->
-                <div class="w-full md:w-1/3 img-container border-b-4 md:border-b-0 md:border-r-4 border-black">
-                    <!-- Update "images/about-photo.jpg" to match your actual file name -->
-                    <img src="images/about-photo.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=photo'" alt="Daryl Correa" class="portfolio-img cursor-default pointer-events-none">
+            <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+                <!-- About Photo (Masked as a circle) -->
+                <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-1/3 md:h-auto aspect-square overflow-hidden rounded-full flex-shrink-0 mx-auto border-4 border-black/10 shadow-lg">
+                    <!-- Object-cover ensures the square image fills the circle without stretching -->
+                    <img src="images/about-photo.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=photo'" alt="Daryl Correa" class="w-full h-full object-cover cursor-default pointer-events-none">
                 </div>
-                <!-- About Text -->
-                <div class="w-full md:w-2/3 bg-black text-white p-8 sm:p-12 flex items-center justify-center">
-                    <p class="text-center w-full leading-relaxed text-lg">
+                <!-- About Text (Black text, transparent background) -->
+                <div class="w-full md:w-2/3 flex items-center justify-center text-center md:text-left">
+                    <p class="w-full leading-relaxed text-lg text-black">
                         About Me text. Replace this section with a short biography, your design philosophy, or details about your experience. Keep it concise and professional.
                     </p>
                 </div>
@@ -137,7 +138,8 @@
 
         <!-- Logos Section -->
         <section id="logos" class="mb-24">
-            <div class="flex flex-col gap-8">
+            <!-- gap-1 on mobile for tighter edge-to-edge feel -->
+            <div class="flex flex-col gap-1 md:gap-8">
                 <!-- Logo Banners (3 requested slots) -->
                 <div class="w-full img-container">
                     <img src="images/logo-1.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+1'" alt="Logo Project 1" class="portfolio-img">
@@ -153,15 +155,15 @@
 
         <!-- Apparel Design Section -->
         <section id="apparel" class="mb-24">
-            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8">Apparel Design</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8 px-4 md:px-0">Apparel Design</h2>
             
             <!-- Apparel Main Banner -->
-            <div class="w-full img-container mb-4">
+            <div class="w-full img-container mb-1 md:mb-4">
                 <img src="images/apparel-banner.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=BANNER'" alt="Apparel Banner" class="portfolio-img">
             </div>
 
             <!-- Apparel Grid (9 requested slots - 1 col mobile, 2 col tablet, 3 col desktop) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 md:gap-4">
                 <div class="img-container"><img src="images/apparel-1.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+1'" alt="Apparel 1" class="portfolio-img"></div>
                 <div class="img-container"><img src="images/apparel-2.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+2'" alt="Apparel 2" class="portfolio-img"></div>
                 <div class="img-container"><img src="images/apparel-3.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+3'" alt="Apparel 3" class="portfolio-img"></div>
@@ -176,16 +178,17 @@
 
         <!-- Art Pieces Section -->
         <section id="art" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8">Art Pieces</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8 px-4 md:px-0">Art Pieces</h2>
             
             <!-- Art Grid (6 requested slots - 1 col mobile, 2 col tablet & desktop) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-0 sm:px-8">
-                 <div class="img-container aspect-square"><img src="images/art-1.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+1'" alt="Art 1" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+            <!-- Note: w-full h-full object-cover ensures they are perfect squares in the grid preview -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-8 px-0">
+                 <div class="img-container aspect-square"><img src="images/art-1.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+1'" alt="Art 1" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
                  <div class="img-container aspect-square"><img src="images/art-2.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+2'" alt="Art 2" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-3.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+3'" alt="Art 3" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-4.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+4'" alt="Art 4" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-5.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+5'" alt="Art 5" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-6.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+6'" alt="Art 6" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-3.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+3'" alt="Art 3" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-4.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+4'" alt="Art 4" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-5.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+5'" alt="Art 5" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-6.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+6'" alt="Art 6" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
             </div>
         </section>
 
@@ -196,6 +199,7 @@
         <button id="lightbox-close" class="absolute top-4 right-4 sm:top-8 sm:right-8 text-white hover:text-gray-400 transition transform hover:scale-110 z-50">
             <i class="ph ph-x text-4xl"></i>
         </button>
+        <!-- max-w-full max-h-full object-contain ensures the image expands to its uncropped original size -->
         <img id="lightbox-img" src="" alt="Expanded View" class="max-w-full max-h-full object-contain shadow-2xl scale-95 transition-transform duration-300">
     </div>
 
@@ -209,8 +213,8 @@
                 <div class="flex gap-4">
                     <!-- Email, Behance, LinkedIn (No Instagram) -->
                     <a href="mailto:darylccorrea@gmail.com" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-envelope-simple text-xl"></i></a>
-                    <a href="#" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-behance-logo text-xl"></i></a>
-                    <a href="#" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                    <a href="https://www.behance.net/0xdc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-behance-logo text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/daryl-correa/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-linkedin-logo text-xl"></i></a>
                 </div>
             </div>
         </div>
