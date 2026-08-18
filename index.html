@@ -164,8 +164,8 @@
                 <img src="images/apparel-banner.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=BANNER'" alt="Apparel Banner" class="portfolio-img">
             </div>
 
-            <!-- Apparel Grid (9 requested slots - 1 col mobile, 2 col tablet, 3 col desktop) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 md:gap-4">
+            <!-- Apparel Grid (9 requested slots - strictly 3 col layout) -->
+            <div class="grid grid-cols-3 gap-1 md:gap-4">
                 <div class="img-container"><img src="images/apparel-1.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+1'" alt="Apparel 1" class="portfolio-img"></div>
                 <div class="img-container"><img src="images/apparel-2.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+2'" alt="Apparel 2" class="portfolio-img"></div>
                 <div class="img-container"><img src="images/apparel-3.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+3'" alt="Apparel 3" class="portfolio-img"></div>
@@ -182,9 +182,9 @@
         <section id="art" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8 px-4 md:px-0">Art Pieces</h2>
             
-            <!-- Art Grid (6 requested slots - 1 col mobile, 2 col tablet & desktop) -->
+            <!-- Art Grid (6 requested slots - strictly 2 col layout) -->
             <!-- Note: w-full h-full object-cover ensures they are perfect squares in the grid preview -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-8 px-0">
+            <div class="grid grid-cols-2 gap-1 md:gap-8 px-0">
                  <div class="img-container aspect-square"><img src="images/art-1.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+1'" alt="Art 1" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
                  <div class="img-container aspect-square"><img src="images/art-2.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+2'" alt="Art 2" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
                  <div class="img-container aspect-square"><img src="images/art-3.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+3'" alt="Art 3" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
@@ -237,12 +237,12 @@
                 if(el.parentElement.classList.contains('grid')) {
                     const childIndex = Array.from(el.parentElement.children).indexOf(el);
                     
-                    // Determine columns based on window width for accurate staggering
+                    // Determine columns based on the new fixed layout classes for accurate staggering
                     let cols = 1; 
-                    if (window.innerWidth >= 768) { 
-                        cols = el.parentElement.classList.contains('md:grid-cols-3') ? 3 : 2;
-                    } else if (window.innerWidth >= 640) { 
-                        cols = el.parentElement.classList.contains('sm:grid-cols-2') ? 2 : 1;
+                    if (el.parentElement.classList.contains('grid-cols-3')) { 
+                        cols = 3;
+                    } else if (el.parentElement.classList.contains('grid-cols-2')) { 
+                        cols = 2;
                     }
                     
                     const delay = (childIndex % cols) * 0.15;
