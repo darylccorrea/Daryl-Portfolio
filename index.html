@@ -26,15 +26,15 @@
     
     <style>
         body { 
-            background-color: white; 
-            color: black; 
+            background-color: black; 
+            color: white; 
         }
         
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #888; }
-        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #555; }
+        ::-webkit-scrollbar-thumb:hover { background: #888; }
         
         /* 
            NO CROPPING CSS: 
@@ -95,7 +95,7 @@
 <body class="font-sans antialiased min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-black text-white py-4 sticky top-0 z-50 shadow-md">
+    <header class="bg-black text-white py-4 sticky top-0 z-50 shadow-md border-b border-white/20">
         <div class="max-w-screen-lg mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
             <div class="text-center sm:text-left mb-4 sm:mb-0">
                 <h1 class="text-2xl font-bold tracking-tight">Daryl Correa</h1>
@@ -118,19 +118,19 @@
             <h2 class="text-3xl font-bold text-center mb-8">About</h2>
             <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
                 <!-- About Photo (Masked as a circle) -->
-                <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-1/3 md:h-auto aspect-square overflow-hidden rounded-full flex-shrink-0 mx-auto border-4 border-black/10 shadow-lg">
+                <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-1/3 md:h-auto aspect-square overflow-hidden rounded-full flex-shrink-0 mx-auto border-4 border-white/20 shadow-lg">
                     <!-- Object-cover ensures the square image fills the circle without stretching -->
-                    <img src="images/about-photo.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=photo'" alt="Daryl Correa" class="w-full h-full object-cover cursor-default pointer-events-none">
+                    <img src="images/about-photo.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=photo'" alt="Daryl Correa" class="w-full h-full object-cover cursor-default pointer-events-none">
                 </div>
-                <!-- About Text (Black text, transparent background) -->
+                <!-- About Text (White text, transparent background) -->
                 <div class="w-full md:w-2/3 flex items-center justify-center text-center md:text-left">
-                    <p class="w-full leading-relaxed text-lg text-black">
+                    <p class="w-full leading-relaxed text-lg text-white">
                         About Me text. Replace this section with a short biography, your design philosophy, or details about your experience. Keep it concise and professional.
                     </p>
                 </div>
             </div>
             <div class="flex justify-center mt-12 mb-4">
-                <a href="#logos" class="hover:text-gray-500 transition-colors cursor-pointer" aria-label="Scroll to Logos">
+                <a href="#logos" class="hover:text-gray-400 transition-colors cursor-pointer" aria-label="Scroll to Logos">
                     <i class="ph ph-caret-down text-4xl font-light animate-bounce"></i>
                 </a>
             </div>
@@ -143,53 +143,53 @@
             <div class="flex flex-col gap-1 md:gap-8">
                 <!-- Logo Banners (3 requested slots) -->
                 <div class="w-full img-container">
-                    <img src="images/logo-1.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+1'" alt="Logo Project 1" class="portfolio-img">
+                    <img src="images/logo-1.jpg" onerror="this.src='https://placehold.co/1200x400/fff/000?text=Logo+banner+1'" alt="Logo Project 1" class="portfolio-img">
                 </div>
                 <div class="w-full img-container">
-                    <img src="images/logo-2.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+2'" alt="Logo Project 2" class="portfolio-img">
+                    <img src="images/logo-2.jpg" onerror="this.src='https://placehold.co/1200x400/fff/000?text=Logo+banner+2'" alt="Logo Project 2" class="portfolio-img">
                 </div>
                 <div class="w-full img-container">
-                    <img src="images/logo-3.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+3'" alt="Logo Project 3" class="portfolio-img">
+                    <img src="images/logo-3.jpg" onerror="this.src='https://placehold.co/1200x400/fff/000?text=Logo+banner+3'" alt="Logo Project 3" class="portfolio-img">
                 </div>
             </div>
         </section>
 
         <!-- Apparel Design Section -->
         <section id="apparel" class="mb-24">
-            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8 px-4 md:px-0">Apparel Design</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-white pt-8 px-4 md:px-0">Apparel Design</h2>
             
             <!-- Apparel Main Banner -->
             <div class="w-full img-container mb-1 md:mb-4">
-                <img src="images/apparel-banner.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=BANNER'" alt="Apparel Banner" class="portfolio-img">
+                <img src="images/apparel-banner.jpg" onerror="this.src='https://placehold.co/1200x400/fff/000?text=BANNER'" alt="Apparel Banner" class="portfolio-img">
             </div>
 
             <!-- Apparel Grid (9 requested slots - strictly 3 col layout) -->
             <div class="grid grid-cols-3 gap-1 md:gap-4">
-                <div class="img-container"><img src="images/apparel-1.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+1'" alt="Apparel 1" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-2.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+2'" alt="Apparel 2" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-3.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+3'" alt="Apparel 3" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-4.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+4'" alt="Apparel 4" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-5.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+5'" alt="Apparel 5" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-6.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+6'" alt="Apparel 6" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-7.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+7'" alt="Apparel 7" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-8.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+8'" alt="Apparel 8" class="portfolio-img"></div>
-                <div class="img-container"><img src="images/apparel-9.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+9'" alt="Apparel 9" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-1.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+1'" alt="Apparel 1" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-2.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+2'" alt="Apparel 2" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-3.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+3'" alt="Apparel 3" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-4.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+4'" alt="Apparel 4" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-5.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+5'" alt="Apparel 5" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-6.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+6'" alt="Apparel 6" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-7.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+7'" alt="Apparel 7" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-8.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+8'" alt="Apparel 8" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-9.jpg" onerror="this.src='https://placehold.co/600x600/fff/000?text=img+9'" alt="Apparel 9" class="portfolio-img"></div>
             </div>
         </section>
 
         <!-- Art Pieces Section -->
         <section id="art" class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8 px-4 md:px-0">Art Pieces</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-white pt-8 px-4 md:px-0">Art Pieces</h2>
             
             <!-- Art Grid (6 requested slots - strictly 2 col layout) -->
             <!-- Note: w-full h-full object-cover ensures they are perfect squares in the grid preview -->
             <div class="grid grid-cols-2 gap-1 md:gap-8 px-0">
-                 <div class="img-container aspect-square"><img src="images/art-1.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+1'" alt="Art 1" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-2.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+2'" alt="Art 2" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-3.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+3'" alt="Art 3" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-4.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+4'" alt="Art 4" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-5.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+5'" alt="Art 5" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
-                 <div class="img-container aspect-square"><img src="images/art-6.png" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+6'" alt="Art 6" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-1.png" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+1'" alt="Art 1" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-2.jpg" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+2'" alt="Art 2" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-3.png" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+3'" alt="Art 3" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-4.png" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+4'" alt="Art 4" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-5.png" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+5'" alt="Art 5" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
+                 <div class="img-container aspect-square"><img src="images/art-6.png" onerror="this.src='https://placehold.co/800x800/fff/000?text=img+6'" alt="Art 6" class="portfolio-img w-full h-full object-cover cursor-pointer"></div>
             </div>
         </section>
 
@@ -205,17 +205,17 @@
     </div>
 
     <!-- Footer Section -->
-    <footer id="contact" class="mt-auto border-t-2 border-gray-100">
+    <footer id="contact" class="mt-auto border-t-2 border-white">
         <div class="max-w-screen-lg mx-auto px-4 py-12 flex flex-col items-center">
             <h4 class="font-bold mb-6 text-xl">Contact</h4>
             <div class="flex flex-col sm:flex-row items-center gap-6 w-full max-w-lg justify-center">
                 <!-- Email, Behance, LinkedIn (No Instagram) -->
-                <a href="mailto:darylccorrea@gmail.com" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-envelope-simple text-xl"></i></a>
-                <a href="https://www.behance.net/0xdc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-behance-logo text-xl"></i></a>
-                <a href="https://www.linkedin.com/in/daryl-correa/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                <a href="mailto:darylccorrea@gmail.com" class="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-gray-300 transition transform hover:-translate-y-1"><i class="ph ph-envelope-simple text-xl"></i></a>
+                <a href="https://www.behance.net/0xdc" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-gray-300 transition transform hover:-translate-y-1"><i class="ph ph-behance-logo text-xl"></i></a>
+                <a href="https://www.linkedin.com/in/daryl-correa/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-gray-300 transition transform hover:-translate-y-1"><i class="ph ph-linkedin-logo text-xl"></i></a>
             </div>
         </div>
-        <div class="bg-black text-white py-8 text-center">
+        <div class="bg-black text-white py-8 text-center border-t border-white/20">
             <p class="text-2xl font-semibold tracking-wider">Footer</p>
         </div>
     </footer>
