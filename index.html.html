@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daryl Correa - Graphic Designer</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for UI elements -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            background-color: white; 
+            color: black; 
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        /* 
+           NO CROPPING CSS: 
+           Height auto ensures the image dictates its own height.
+           Object-fit contain acts as a failsafe so no skewing occurs.
+        */
+        .portfolio-img {
+            width: 100%;
+            height: auto; 
+            display: block;
+            object-fit: contain; 
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .img-container {
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-container:hover .portfolio-img {
+            transform: scale(1.03);
+        }
+        
+        /* Smooth Reveal Animations for scrolling */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Lightbox Modal Styles */
+        .lightbox {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Add a pointer cursor to clickable images */
+        #logos .portfolio-img, #apparel .portfolio-img, #art .portfolio-img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-black text-white py-4 sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-center sm:text-left mb-4 sm:mb-0">
+                <h1 class="text-2xl font-bold tracking-tight">Daryl Correa</h1>
+                <p class="text-sm font-light text-gray-300">Graphic Designer</p>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm">
+                <a href="#about" class="hover:text-gray-300 transition">About</a>
+                <a href="#logos" class="hover:text-gray-300 transition">Logo Design</a>
+                <a href="#apparel" class="hover:text-gray-300 transition">Apparel Design</a>
+                <a href="#art" class="hover:text-gray-300 transition">Art Pieces</a>
+                <a href="#contact" class="hover:text-gray-300 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-8">
+        
+        <!-- About Section -->
+        <section id="about" class="mb-16 pt-8">
+            <h2 class="text-3xl font-bold text-center mb-8">About</h2>
+            <div class="flex flex-col md:flex-row gap-0 items-stretch border-4 border-black">
+                <!-- About Photo (Uses images folder path now) -->
+                <div class="w-full md:w-1/3 img-container border-b-4 md:border-b-0 md:border-r-4 border-black">
+                    <!-- Update "images/about-photo.jpg" to match your actual file name -->
+                    <img src="images/about-photo.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=photo'" alt="Daryl Correa" class="portfolio-img">
+                </div>
+                <!-- About Text -->
+                <div class="w-full md:w-2/3 bg-black text-white p-8 sm:p-12 flex items-center justify-center">
+                    <p class="text-center w-full leading-relaxed text-lg">
+                        About Me text. Replace this section with a short biography, your design philosophy, or details about your experience. Keep it concise and professional.
+                    </p>
+                </div>
+            </div>
+            <div class="flex justify-center mt-12 mb-4">
+                <i class="ph ph-caret-down text-4xl font-light animate-bounce"></i>
+            </div>
+            <div class="text-center font-bold text-xl mb-8">Logos</div>
+        </section>
+
+        <!-- Logos Section -->
+        <section id="logos" class="mb-24">
+            <div class="flex flex-col gap-8">
+                <!-- Logo Banners (3 requested slots) -->
+                <div class="w-full img-container">
+                    <img src="images/logo-1.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+1'" alt="Logo Project 1" class="portfolio-img">
+                </div>
+                <div class="w-full img-container">
+                    <img src="images/logo-2.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+2'" alt="Logo Project 2" class="portfolio-img">
+                </div>
+                <div class="w-full img-container">
+                    <img src="images/logo-3.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=Logo+banner+3'" alt="Logo Project 3" class="portfolio-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Apparel Design Section -->
+        <section id="apparel" class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8">Apparel Design</h2>
+            
+            <!-- Apparel Main Banner -->
+            <div class="w-full img-container mb-4">
+                <img src="images/apparel-banner.jpg" onerror="this.src='https://placehold.co/1200x400/111/fff?text=BANNER'" alt="Apparel Banner" class="portfolio-img">
+            </div>
+
+            <!-- Apparel Grid (9 requested slots - 1 col mobile, 2 col tablet, 3 col desktop) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="img-container"><img src="images/apparel-1.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+1'" alt="Apparel 1" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-2.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+2'" alt="Apparel 2" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-3.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+3'" alt="Apparel 3" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-4.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+4'" alt="Apparel 4" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-5.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+5'" alt="Apparel 5" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-6.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+6'" alt="Apparel 6" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-7.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+7'" alt="Apparel 7" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-8.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+8'" alt="Apparel 8" class="portfolio-img"></div>
+                <div class="img-container"><img src="images/apparel-9.jpg" onerror="this.src='https://placehold.co/600x600/111/fff?text=img+9'" alt="Apparel 9" class="portfolio-img"></div>
+            </div>
+        </section>
+
+        <!-- Art Pieces Section -->
+        <section id="art" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 border-t-2 border-black pt-8">Art Pieces</h2>
+            
+            <!-- Art Grid (6 requested slots - 1 col mobile, 2 col tablet & desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-0 sm:px-8">
+                 <div class="img-container"><img src="images/art-1.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+1'" alt="Art 1" class="portfolio-img"></div>
+                 <div class="img-container"><img src="images/art-2.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+2'" alt="Art 2" class="portfolio-img"></div>
+                 <div class="img-container"><img src="images/art-3.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+3'" alt="Art 3" class="portfolio-img"></div>
+                 <div class="img-container"><img src="images/art-4.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+4'" alt="Art 4" class="portfolio-img"></div>
+                 <div class="img-container"><img src="images/art-5.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+5'" alt="Art 5" class="portfolio-img"></div>
+                 <div class="img-container"><img src="images/art-6.jpg" onerror="this.src='https://placehold.co/800x800/111/fff?text=img+6'" alt="Art 6" class="portfolio-img"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal (Hidden by default) -->
+    <div id="lightbox" class="lightbox fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 sm:p-8">
+        <button id="lightbox-close" class="absolute top-4 right-4 sm:top-8 sm:right-8 text-white hover:text-gray-400 transition transform hover:scale-110 z-50">
+            <i class="ph ph-x text-4xl"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Expanded View" class="max-w-full max-h-full object-contain shadow-2xl scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="mt-auto border-t-2 border-gray-100">
+        <div class="max-w-5xl mx-auto px-4 py-12 flex flex-col items-center">
+            <h4 class="font-bold mb-6 text-xl">Contact</h4>
+            <div class="flex flex-col sm:flex-row items-center gap-6 w-full max-w-lg">
+                <span class="text-sm text-gray-500 uppercase tracking-widest whitespace-nowrap">connect below</span>
+                <div class="hidden sm:block h-px bg-gray-300 flex-grow"></div>
+                <div class="flex gap-4">
+                    <!-- Email, Behance, LinkedIn (No Instagram) -->
+                    <a href="mailto:your.email@example.com" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-envelope-simple text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-behance-logo text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 bg-black text-white flex items-center justify-center hover:bg-gray-800 transition transform hover:-translate-y-1"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black text-white py-8 text-center">
+            <p class="text-2xl font-semibold tracking-wider">Footer</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Intersection Observer for Scroll Animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const animatedElements = document.querySelectorAll('section h2, .img-container, #about > div:nth-of-type(1)');
+            
+            animatedElements.forEach((el) => {
+                el.classList.add('reveal');
+                
+                // Stagger grid items so they fade in one after another
+                if(el.parentElement.classList.contains('grid')) {
+                    const childIndex = Array.from(el.parentElement.children).indexOf(el);
+                    
+                    // Determine columns based on window width for accurate staggering
+                    let cols = 1; 
+                    if (window.innerWidth >= 768) { 
+                        cols = el.parentElement.classList.contains('md:grid-cols-3') ? 3 : 2;
+                    } else if (window.innerWidth >= 640) { 
+                        cols = el.parentElement.classList.contains('sm:grid-cols-2') ? 2 : 1;
+                    }
+                    
+                    const delay = (childIndex % cols) * 0.15;
+                    el.style.transitionDelay = `${delay}s`;
+                }
+            });
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active'); 
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { 
+                root: null, 
+                rootMargin: '0px', 
+                threshold: 0.1 
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
+            // --- Lightbox Popup Logic ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('lightbox-close');
+            
+            // Select images ONLY in the logos, apparel, and art sections (ignores About section)
+            const clickableImages = document.querySelectorAll('#logos img, #apparel img, #art img');
+
+            const openLightbox = (src) => {
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+                setTimeout(() => lightboxImg.classList.replace('scale-95', 'scale-100'), 10);
+                document.body.style.overflow = 'hidden'; // Stop background scrolling
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxImg.classList.replace('scale-100', 'scale-95');
+                document.body.style.overflow = ''; // Restore background scrolling
+            };
+
+            // Attach click events to images
+            clickableImages.forEach(img => {
+                img.addEventListener('click', () => openLightbox(img.src));
+            });
+
+            // Close when clicking the X button
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            // Close when clicking the dark background outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            
+            // Close when hitting the Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
